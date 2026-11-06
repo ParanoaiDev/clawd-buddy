@@ -1,0 +1,12 @@
+{
+  "name": "clawd-buddy",
+  "owner": {
+    "name": "RovelLabs"
+  },
+  "plugins": [
+    {
+      "name": "clawd-buddy",
+      "source": "./"
+    }
+  ]
+}

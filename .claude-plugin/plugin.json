@@ -1,0 +1,11 @@
+{
+  "name": "clawd-buddy",
+  "version": "0.4.1",
+  "description": "Пиксельный жук Клауд живёт над полем ввода, гуляет и реагирует на то, что делает Claude",
+  "types": "./types/index.d.ts",
+  "author": {
+    "name": "RovelLabs"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RovelLabs/clawd-buddy"
+}

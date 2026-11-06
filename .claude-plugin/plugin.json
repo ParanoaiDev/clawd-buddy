@@ -4,12 +4,12 @@
   "description": "A pixel pet for the Claude desktop app: Clawd lives above your prompt box and reacts to what Claude is doing, in your app language",
   "types": "./types/index.d.ts",
   "author": {
-    "name": "Rovel Labs",
-    "url": "https://github.com/RovelLabs"
+    "name": "Paranoia Dev",
+    "url": "https://github.com/ParanoaiDev"
   },
   "license": "MIT",
-  "repository": "https://github.com/RovelLabs/clawd-buddy",
-  "homepage": "https://github.com/RovelLabs/clawd-buddy",
+  "repository": "https://github.com/ParanoaiDev/clawd-buddy",
+  "homepage": "https://github.com/ParanoaiDev/clawd-buddy",
   "keywords": [
     "claude",
     "claude-code",

@@ -5,11 +5,11 @@
 **A pixel pet for the Claude desktop app.**
 Clawd lives right above your prompt box, wanders a starry night scene, and reacts to everything Claude does.
 
-[![Version](https://img.shields.io/github/v/tag/RovelLabs/clawd-buddy?label=version&color=D97757)](https://github.com/RovelLabs/clawd-buddy/tags)
+[![Version](https://img.shields.io/github/v/tag/ParanoaiDev/clawd-buddy?label=version&color=D97757)](https://github.com/ParanoaiDev/clawd-buddy/tags)
 [![License: MIT](https://img.shields.io/badge/license-MIT-D97757)](LICENSE)
 [![Claude plugin](https://img.shields.io/badge/Claude-plugin-D97757)](#install)
 [![Languages](https://img.shields.io/badge/languages-15-D97757)](#speaks-your-language)
-[![GitHub stars](https://img.shields.io/github/stars/RovelLabs/clawd-buddy?style=flat&color=D97757)](https://github.com/RovelLabs/clawd-buddy/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/ParanoaiDev/clawd-buddy?style=flat&color=D97757)](https://github.com/ParanoaiDev/clawd-buddy/stargazers)
 
 <img src="assets/demo.gif" alt="Clawd walking above the Claude prompt box and reacting to tool calls" width="760">
 
@@ -46,18 +46,18 @@ English, Русский, Українська, Deutsch, Español, Français, Ita
 
 ## Install
 
-**In the Claude desktop app:** click **+** next to the prompt box, then **Plugins**, **Add marketplace** with `RovelLabs/clawd-buddy`, then **Add plugin**.
+**In the Claude desktop app:** click **+** next to the prompt box, then **Plugins**, **Add marketplace** with `ParanoaiDev/clawd-buddy`, then **Add plugin**.
 
 **In a Claude Code terminal session:**
 
 ```
-/plugin install clawd-buddy --marketplace RovelLabs/clawd-buddy
+/plugin install clawd-buddy --marketplace ParanoaiDev/clawd-buddy
 ```
 
 **From a shell:**
 
 ```
-claude plugin install clawd-buddy --marketplace RovelLabs/clawd-buddy
+claude plugin install clawd-buddy --marketplace ParanoaiDev/clawd-buddy
 ```
 
 Clawd then shows up above the prompt box in your new chats. Chats that are already open pick it up after you restart the app.
@@ -69,7 +69,7 @@ Use the `[-]` button next to the band to collapse it, or turn the plugin off in 
 ## Requirements
 
 - The Claude desktop app. Clawd is drawn on the desktop surface only, so other surfaces show nothing.
-- The plugin uses Claude Code's early-access hooks API, and it sits slightly outside the app's own card to cover its padding. An app update may shift the scene. Please [open an issue](https://github.com/RovelLabs/clawd-buddy/issues) if it does.
+- The plugin uses Claude Code's early-access hooks API, and it sits slightly outside the app's own card to cover its padding. An app update may shift the scene. Please [open an issue](https://github.com/ParanoaiDev/clawd-buddy/issues) if it does.
 
 ## Privacy
 
@@ -96,7 +96,7 @@ To add a language, add its lines to `hooks/captions.ts` and open a pull request.
 
 ## Author
 
-Made by [Rovel Labs](https://github.com/RovelLabs), built with [Claude Code](https://claude.com/claude-code).
+Made by [Paranoia Dev](https://github.com/ParanoaiDev), built with [Claude Code](https://claude.com/claude-code).
 
 ## License
 

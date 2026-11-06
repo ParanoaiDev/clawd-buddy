@@ -414,10 +414,10 @@ const SCENE_PX = H * SCALE
 
 // Percent across the band, px down, loop seconds: the sky stretches with the band.
 const STARS: [number, number, number][] = [
-  [4, 14, 3.1],
-  [11, 40, 4.3],
-  [19, 10, 2.7],
-  [27, 30, 5.1],
+  [4, 42, 3.1],
+  [11, 34, 4.3],
+  [19, 44, 2.7],
+  [27, 36, 5.1],
   [36, 12, 3.7],
   [44, 44, 4.7],
   [53, 18, 2.9],
@@ -473,26 +473,6 @@ export function drawSvg(kind: MoodKind, seed: number, stage: number, caption: st
     drawBug(frames, dur) +
     '</g></svg></svg>'
   )
-}
-
-const CAPTIONS: Record<MoodKind, string[]> = {
-  idle: [''],
-  think: ['думаю…', 'хм…', 'соображаю…'],
-  bash: ['гоняю команды', 'стучу по клавишам'],
-  write: ['пишу код', 'строчу'],
-  read: ['читаю', 'изучаю файлы'],
-  web: ['лезу в интернет', 'гуглю'],
-  agent: ['зову подмогу'],
-  ask: ['жду твой ответ'],
-  done: ['готово!', 'сделано!'],
-  sad: ['ладно…'],
-  oops: ['ой, что-то сломалось'],
-}
-
-export function captionFor(kind: MoodKind, seed: number) {
-  const options = CAPTIONS[kind]
-
-  return options[seed % options.length] ?? ''
 }
 
 export function moodForTool(tool: string): MoodKind | undefined {

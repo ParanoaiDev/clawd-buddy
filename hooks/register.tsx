@@ -2,7 +2,8 @@ import { atom, read, update } from 'claude-code'
 import type { EngineInterface, Register, Timer } from 'claude-code'
 
 import type { Mood, MoodKind } from '../types'
-import { HEIGHT_PX, SCALE_PX, captionFor, drawSvg, moodForTool } from './sprite'
+import { appConfigPath, captionFor, languageOf } from './captions'
+import { HEIGHT_PX, SCALE_PX, drawSvg, moodForTool } from './sprite'
 
 // Stage width in sprite units when the surface has not measured the band.
 const FALLBACK_STAGE = 200
@@ -24,11 +25,35 @@ const mood = atom(
 
 const newSeed = () => Math.floor(Math.random() * 2147483647)
 
+let language = 'en'
 let isTurn = false
 let shown: MoodKind = 'idle'
 let wanted: MoodKind = 'idle'
 let isCooling = false
 let rest: Timer | undefined
+
+// The desktop app keeps its language in config.json, in the folder that also
+// holds the claude-code binary it runs. Only the `locale` field is taken.
+async function readAppLocale($: EngineInterface) {
+  const path = appConfigPath(await $.env.get('CLAUDE_CODE_EXECPATH'))
+  if (path === undefined) return undefined
+
+  try {
+    const config: unknown = JSON.parse(await $.fs.read(path))
+    const locale = (config as { locale?: unknown }).locale
+
+    return typeof locale === 'string' ? locale : undefined
+  } catch {
+    return undefined
+  }
+}
+
+async function findLanguage($: EngineInterface) {
+  const locale =
+    (await readAppLocale($)) ?? (await $.env.get('LC_ALL')) ?? (await $.env.get('LANG'))
+
+  return languageOf(locale)
+}
 
 function want($: EngineInterface, kind: MoodKind) {
   wanted = kind
@@ -45,6 +70,7 @@ function want($: EngineInterface, kind: MoodKind) {
 
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
+    language = await findLanguage($)
     await update($, mood, () => ({ kind: 'idle', seed: newSeed() }))
 
     return next(e)
@@ -97,8 +123,8 @@ export const register: Register = on => {
       <Box position="relative" height={BAND_ROWS}>
         <Box position="absolute" top={-1} left={-1} right={-1}>
           <Svg
-            source={drawSvg(kind, seed, stage, captionFor(kind, seed))}
-            alt="Пиксельный жук Клауд"
+            source={drawSvg(kind, seed, stage, captionFor(kind, language))}
+            alt="Clawd, a pixel bug"
             width={WIDE_PX}
             height={HEIGHT_PX}
             isInteractive

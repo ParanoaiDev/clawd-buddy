@@ -1,12 +1,15 @@
 {
   "name": "clawd-buddy",
   "owner": {
-    "name": "RovelLabs"
+    "name": "Rovel Labs",
+    "url": "https://github.com/RovelLabs"
   },
   "plugins": [
     {
       "name": "clawd-buddy",
-      "source": "./"
+      "source": "./",
+      "description": "A pixel pet for the Claude desktop app"
     }
-  ]
+  ],
+  "description": "clawd-buddy, a pixel pet for the Claude desktop app"
 }

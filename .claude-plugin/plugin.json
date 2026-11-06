@@ -1,11 +1,25 @@
 {
   "name": "clawd-buddy",
-  "version": "0.4.1",
-  "description": "Пиксельный жук Клауд живёт над полем ввода, гуляет и реагирует на то, что делает Claude",
+  "version": "0.5.0",
+  "description": "A pixel pet for the Claude desktop app: Clawd lives above your prompt box and reacts to what Claude is doing, in your app language",
   "types": "./types/index.d.ts",
   "author": {
-    "name": "RovelLabs"
+    "name": "Rovel Labs",
+    "url": "https://github.com/RovelLabs"
   },
   "license": "MIT",
-  "repository": "https://github.com/RovelLabs/clawd-buddy"
+  "repository": "https://github.com/RovelLabs/clawd-buddy",
+  "homepage": "https://github.com/RovelLabs/clawd-buddy",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "clawd",
+    "pixel-art",
+    "virtual-pet",
+    "desktop-pet",
+    "mascot",
+    "animation",
+    "status",
+    "fun"
+  ]
 }
